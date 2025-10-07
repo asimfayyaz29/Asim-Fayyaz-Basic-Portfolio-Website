@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asim Fayyaz | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h2>Asim Fayyaz</h2>
+        <ul class="nav-opt">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#goals">Goals</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="container fade" id="home" style="background-image: url(assets/img/1.jpg);">
+        <div class="card">
+            <h1>Welcome to my Website!</h1>
+            <p>Hi! I'm a fresher learning HTML, CSS, and JavaScript. Excited to build creative websites and grow my
+                skills!</p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="container fade" id="about" style="background-image: url(/assets/img/2.jpg);">
+        <div class="card">
+            <h1>About Me</h1>
+            <p>Passionate about technology, blockchain, and digital innovation. Exploring the future of Web Design,
+                Web3, and AI.</p>
+        </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="container fade" id="goals" style="background-image: url(assets/img/3.jpg);">
+        <div class="card card-aim">
+            <h1>Future Goals</h1>
+            <div class="card2-container">
+                <div class="card card2">
+                    <h3>Full-Stack Web Development</h3>
+                    <p>Learning HTML, CSS, and JavaScript with modern frameworks to build full-stack solutions.</p>
+                </div>
+                <div class="card card2">
+                    <h3>Blockchain Technology</h3>
+                    <p>Exploring decentralized systems, smart contracts, and how Web3 transforms the internet.</p>
+                </div>
+                <div class="card card2">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Interested in integrating AI agents into applications for smarter user experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="container fade" id="contact" style="background-image: url(assets/img/4.jpg);">
+        <div class="card">
+            <h1>Let’s Connect!</h1>
+            <p>Hey, let's connect and grow together! 🚀 Excited to build and create more amazing websites!</p>
+        </div>
+        <footer>
+            <p>&copy; 2025 Asim Fayyaz. All rights reserved.</p>
+        </footer>
+    </section>
+
+
+
+    <script>
+        // Fade animation when scrolling
+        const fades = document.querySelectorAll(".fade");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fades.forEach(fade => observer.observe(fade));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
